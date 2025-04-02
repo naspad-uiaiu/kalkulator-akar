@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Akar Kuadrat</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        input { padding: 10px; margin: 10px; width: 200px; }
+        button { padding: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Kalkulator Akar Kuadrat</h2>
+    <input type="number" id="bilangan" placeholder="Masukkan bilangan">
+    <button onclick="hitungAkar()">Hitung</button>
+    <p id="hasil"></p>
+
+    <script>
+        function hitungAkar() {
+            let x = document.getElementById('bilangan').value;
+            let hasilElement = document.getElementById('hasil');
+            
+            if (x === '') {
+                hasilElement.innerHTML = 'Masukkan angka terlebih dahulu!';
+                return;
+            }
+
+            x = parseFloat(x);
+            let hasil = x < 0 ? Math.sqrt(-x) + 'i' : Math.sqrt(x);
+            hasilElement.innerHTML = 'Akar kuadrat: ' + hasil;
+        }
+    </script>
+</body>
+</html>
